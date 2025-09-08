@@ -1,5 +1,10 @@
+
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowUp } from 'lucide-react';
+import hospital from '../../assets/hospital01.webp';
+import doctors from '../../assets/doctors.jpg';
+import image03 from '../../assets/image03.jpg';
+
 
 
 export default function Portfolio() {
@@ -10,19 +15,19 @@ export default function Portfolio() {
       id: 1,
       title: "Fantastic interior",
       category: "Hotel",
-      image: "/image01.jpg"
+      image: hospital
     },
     {
       id: 2,
       title: "Mendella exterior",
       category: "Hall",
-      image: "./public/image02.jpg"
+      image: doctors
     },
     {
       id: 3,
       title: "Scott Villa du",
       category: "Residence",
-      image: "./public/image03.jpg"
+      image: image03
     }
   ];
 
