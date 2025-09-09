@@ -59,8 +59,8 @@ const ClientSection = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 py-16 px-4 ">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}

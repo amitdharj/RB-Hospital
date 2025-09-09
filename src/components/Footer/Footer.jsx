@@ -4,44 +4,8 @@ const Footer = () => {
   return (
     <footer className="relative bg-black text-white overflow-hidden">
       {/* City Skyline SVG Background */}
-      <div className="absolute inset-0 opacity-30">
-        <svg className="w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
-          {/* City skyline outline */}
-          <g stroke="#333" strokeWidth="1" fill="none">
-            {/* Left side buildings */}
-            <rect x="50" y="250" width="40" height="150" />
-            <rect x="100" y="200" width="50" height="200" />
-            <rect x="160" y="230" width="35" height="170" />
-            <rect x="205" y="180" width="60" height="220" />
-            <rect x="275" y="220" width="45" height="180" />
-            <rect x="330" y="160" width="55" height="240" />
-            <rect x="395" y="190" width="40" height="210" />
-            <rect x="445" y="140" width="65" height="260" />
-            <rect x="520" y="170" width="50" height="230" />
-            
-            {/* Center tall buildings */}
-            <rect x="580" y="80" width="70" height="320" />
-            <rect x="660" y="120" width="55" height="280" />
-            <rect x="725" y="60" width="80" height="340" />
-            <rect x="815" y="100" width="60" height="300" />
-            
-            {/* Right side buildings */}
-            <rect x="885" y="180" width="45" height="220" />
-            <rect x="940" y="150" width="55" height="250" />
-            <rect x="1005" y="200" width="40" height="200" />
-            <rect x="1055" y="170" width="50" height="230" />
-            <rect x="1115" y="140" width="45" height="260" />
-            
-            {/* Building details - windows */}
-            {[...Array(15)].map((_, i) => (
-              <g key={i}>
-                <rect x={100 + i * 80} y={200 + Math.random() * 50} width="8" height="12" fill="#333" opacity="0.5" />
-                <rect x={110 + i * 80} y={220 + Math.random() * 30} width="8" height="12" fill="#333" opacity="0.5" />
-                <rect x={120 + i * 80} y={240 + Math.random() * 40} width="8" height="12" fill="#333" opacity="0.5" />
-              </g>
-            ))}
-          </g>
-        </svg>
+      <div className="absolute inset-0 opacity-90">
+       <img src="/background.jpg" alt="" className='obeject-contain w-full h-full' />
       </div>
 
       {/* Content */}

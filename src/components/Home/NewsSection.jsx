@@ -2,8 +2,8 @@ import React from 'react';
 
 const News = () => {
   return (
-    <section className="bg-gray-50 py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-yellow-600 text-sm font-medium tracking-widest uppercase mb-4">

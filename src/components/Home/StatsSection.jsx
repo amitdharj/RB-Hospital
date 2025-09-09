@@ -96,8 +96,8 @@ export default function StatsSection() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center p-6 lg:p-12">
-        <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 min-h-screen flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-2 gap-12 items-center py-16">
           
           {/* Left Side - Main Statistics */}
           <div className="space-y-8">

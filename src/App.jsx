@@ -8,7 +8,9 @@ import StatsSection from './components/Home/StatsSection'
 import ClientSection from './components/Home/ClientSection'
 import News from './components/Home/NewsSection'
 import Footer from './components/Footer/Footer'
-import Portfolio from './components/Home/Portfolio'
+import HealthCare from './components/Home/HealthCare'
+import Header from './components/Header/Header'
+
 
 
 
@@ -17,11 +19,13 @@ function App() {
 
   return (
     <>
+    <Header />
       <Homepage />
+      <HealthCare />
       <WhyChoose />
       <StatsSection />
       <ClientSection />
-      <Portfolio />
+      
       <News />
       <Footer />
       
