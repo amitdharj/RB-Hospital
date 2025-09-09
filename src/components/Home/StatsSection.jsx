@@ -67,32 +67,7 @@ export default function StatsSection() {
       
       {/* Geometric Background Pattern */}
       <div className="absolute inset-0">
-        {geometricShapes.map((shape) => (
-          <div
-            key={shape.id}
-            className={`absolute transition-all duration-1000 ${
-              shape.shape === 'square' 
-                ? 'bg-gray-700' 
-                : 'bg-gray-500'
-            }`}
-            style={{
-              left: `${shape.x}%`,
-              top: `${shape.y}%`,
-              width: `${shape.size}px`,
-              height: `${shape.size}px`,
-              opacity: shape.opacity,
-              transform: `rotate(${shape.rotation}deg)`,
-              clipPath: shape.shape === 'triangle' 
-                ? 'polygon(50% 0%, 0% 100%, 100% 100%)' 
-                : 'none'
-            }}
-          />
-        ))}
-        
-        {/* Additional layered geometric elements */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gray-400 opacity-20 transform rotate-45"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-24 h-24 bg-gray-500 opacity-25 transform rotate-12"></div>
-        <div className="absolute top-1/2 right-1/3 w-40 h-40 bg-gray-600 opacity-15 transform -rotate-12"></div>
+        <img src="/blocks.jpg" alt="image1" />
       </div>
 
       {/* Main Content */}

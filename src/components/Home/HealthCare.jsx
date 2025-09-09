@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const HealthCare = () => {
   const [activeTab, setActiveTab] = useState('Emergency Care');
@@ -49,6 +49,35 @@ const HealthCare = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Slide-in on scroll for left and right columns
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const [leftIn, setLeftIn] = useState(false);
+  const [rightIn, setRightIn] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.target === leftRef.current && entry.isIntersecting) {
+            setLeftIn(true);
+            obs.unobserve(entry.target);
+          }
+          if (entry.target === rightRef.current && entry.isIntersecting) {
+            setRightIn(true);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    if (leftRef.current) observer.observe(leftRef.current);
+    if (rightRef.current) observer.observe(rightRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   const formatNumber = (num) => {
     if (num >= 1000) {
       return (num / 1000).toFixed(0) + 'K';
@@ -61,7 +90,12 @@ const HealthCare = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Side - Images */}
-          <div className="space-y-6">
+          <div
+            ref={leftRef}
+            className={`space-y-6 transform transition-all duration-4000 ease-out ${
+              leftIn ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+            }`}
+          >
             {/* Main Hospital Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <div className="h-64 bg-gradient-to-r from-gray-200 to-gray-300 flex items-center justify-center">
@@ -103,7 +137,12 @@ const HealthCare = () => {
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-8">
+          <div
+            ref={rightRef}
+            className={`space-y-8 transform transition-all duration-4000 ease-out ${
+              rightIn ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+            }`}
+          >
             {/* Header */}
             <div>
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
