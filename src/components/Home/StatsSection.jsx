@@ -67,7 +67,9 @@ export default function StatsSection() {
       
       {/* Geometric Background Pattern */}
       <div className="absolute inset-0">
-        <img src="/blocks.jpg" alt="image1" />
+        <img src="/blocks.jpg" alt="image1" className="w-full h-full object-cover" />
+        {/* Mobile overlay to darken background for better contrast on small screens */}
+        <div className="absolute inset-0 bg-black/40 md:bg-transparent" aria-hidden="true" />
       </div>
 
       {/* Main Content */}

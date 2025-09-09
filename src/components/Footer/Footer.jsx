@@ -2,10 +2,12 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-white overflow-hidden">
+    <footer className="relative text-white overflow-hidden">
       {/* City Skyline SVG Background */}
-      <div className="absolute inset-0 opacity-90">
-       <img src="/background.jpg" alt="" className='obeject-contain w-full h-full' />
+      <div className="absolute inset-0">
+        <img src="/background.jpg" alt="city skyline background" className="w-full h-full object-cover object-bottom md:object-center" />
+        {/* Dark overlay on mobile for better contrast */}
+        <div className="absolute inset-0  md:bg-transparent" aria-hidden="true" />
       </div>
 
       {/* Content */}
@@ -68,7 +70,7 @@ const Footer = () => {
               
               {/* Brand */}
               <div>
-                <h3 className="text-2xl font-light">archio.</h3>
+                <h3 className="text-2xl font-light">R.B.</h3>
               </div>
             </div>
 
