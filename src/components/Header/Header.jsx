@@ -58,7 +58,17 @@ export default function Header() {
                 <a href="#" className="text-gray-700 hover:text-blue-500 font-medium">Home</a>
                 <a href="#" className="text-gray-700 hover:text-blue-500 font-medium">About Us</a>
                 <a href="#" className="text-gray-700 hover:text-blue-500 font-medium">Services</a>
-                <a href="#" className="text-gray-700 hover:text-blue-500 font-medium">Contact</a>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById('contact');
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
+                  className="text-gray-700 hover:text-blue-500 font-medium"
+                >
+                  Contact
+                </a>
               </div>
 
               {/* Mobile: dropdown toggle */}
@@ -112,7 +122,17 @@ function Dropdown() {
           <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Home</a>
           <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">About Us</a>
           <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Services</a>
-          <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50">Contact</a>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            className="block px-4 py-2 text-gray-700 hover:bg-gray-50"
+          >
+            Contact
+          </a>
         </div>
       )}
     </div>

@@ -106,6 +106,7 @@ const News = () => {
             </svg>
           </button>
         </div>
+        
       </div>
     </section>
   );

@@ -125,13 +125,13 @@ const HealthCare = () => {
                     <img src="staff.webp" alt="" />
                 </div>
                 {/* Success Rate Badge */}
-                <div className="absolute bottom-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full flex items-center space-x-1">
+                <div className="absolute bottom-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full flex items-center space-x-1">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                   <div className="text-sm font-bold">98%</div>
                 </div>
-                <div className="absolute bottom-0 right-3 text-xs text-green-700 font-medium">Success Rate</div>
+                <div className="absolute bottom-0 right-3 text-xs text-blue-700 font-medium">Success Rate</div>
               </div>
             </div>
           </div>

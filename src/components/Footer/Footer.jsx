@@ -12,7 +12,7 @@ const Footer = () => {
 
       {/* Content */}
       <div className="relative z-10 px-4 py-16">
-        <div className="max-w-7xl mx-auto">
+  <div id="contact" className="max-w-7xl mx-auto">
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Let's Talk Section */}

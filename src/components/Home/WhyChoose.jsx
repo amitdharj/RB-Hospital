@@ -8,57 +8,12 @@ export default function WhyChoose() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left Side - Image Section */}
-          <div className="relative">
-            {/* Main architectural image placeholder */}
-            <div className="relative overflow-hidden rounded-lg">
-              <div className="bg-gradient-to-br from-amber-100 via-orange-200 to-amber-300 h-96 lg:h-[500px] relative">
-                {/* Wooden curved structure simulation */}
-                <div className="absolute inset-0">
-                  {/* Curved wooden beams */}
-                  <div className="absolute top-8 left-8 w-32 h-8 bg-amber-800 rounded-full transform rotate-12 opacity-80"></div>
-                  <div className="absolute top-16 left-12 w-28 h-6 bg-amber-900 rounded-full transform rotate-6 opacity-70"></div>
-                  <div className="absolute top-24 left-8 w-32 h-8 bg-amber-800 rounded-full transform rotate-12 opacity-80"></div>
-                  
-                  {/* Glass panels simulation */}
-                  <div className="absolute top-12 right-8 w-24 h-16 bg-blue-200 opacity-60 rounded"></div>
-                  <div className="absolute top-32 right-12 w-20 h-12 bg-blue-300 opacity-50 rounded"></div>
-                  <div className="absolute top-52 right-8 w-24 h-16 bg-blue-200 opacity-60 rounded"></div>
-                </div>
-                
-                {/* Geometric overlay */}
-                <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gray-100 opacity-90">
-                  <div className="grid grid-cols-8 grid-rows-8 h-full gap-px p-2">
-                    {Array.from({ length: 64 }).map((_, i) => (
-                      <div key={i} className="bg-white opacity-80"></div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Dotted pattern overlay */}
-                <div className="absolute right-4 top-1/4 h-1/2 w-px">
-                  <div className="flex flex-col space-y-1">
-                    {Array.from({ length: 20 }).map((_, i) => (
-                      <div key={i} className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              {/* View now button */}
-              <div className="absolute bottom-6 left-6">
-                <button className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg flex items-center space-x-2 transition-colors duration-200">
-                  <span className="font-medium">View now</span>
-                  <Play className="w-4 h-4 fill-current" />
-                </button>
-              </div>
-            </div>
-          </div>
           
-          {/* Right Side - Content Section */}
-          <div className="space-y-6">
+
+           <div className="space-y-6">
             {/* Fun fact label */}
             <div className="text-amber-600 font-medium text-sm uppercase tracking-wide">
-              Fun fact
+              Why Choose Us
             </div>
             
             {/* Main heading */}
@@ -88,6 +43,13 @@ export default function WhyChoose() {
               </p>
             </div>
           </div>
+          
+          {/* Right Side - Content Section */}
+          <div className="relative">
+            {/* Main architectural image placeholder */}
+            <img src="/Doctors01.webp" alt="image01" className="w-full h-full object-cover" />
+          </div>
+         
         </div>
         
         {/* Scroll to top button
