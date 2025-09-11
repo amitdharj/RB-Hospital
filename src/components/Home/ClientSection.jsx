@@ -60,108 +60,81 @@ const ClientSection = () => {
 
   return (
     <section className="bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className=" display flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className=" display flex flex-col gap-12 lg:gap-20 items-start">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-1">
             {/* Header */}
             <div>
               <div className="inline-block bg-yellow-200 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 Clients
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900  mb-6">
                 We depends on our<br />
                 trusted <span className="text-yellow-600">clients</span>
               </h2>
-              <div className="w-16 h-1 bg-yellow-600 mb-8"></div>
+              <div className="w-20 h-1 bg-yellow-600 mb-8"></div>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Our success is built on the trust and partnership of our<br />
                 valued clients who believe in our vision and expertise.
               </p>
             </div>
-
-            {/* Navigation Controls */}
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
-                className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center hover:border-yellow-600 hover:text-yellow-600 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button 
-                onClick={() => setCurrentSlide((currentSlide + 1) % 3)}
-                className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center hover:border-yellow-600 hover:text-yellow-600 transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Slide Indicators */}
-            <div className="flex space-x-2">
-              {[0, 1, 2].map((index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`h-1 rounded-full transition-all ${
-                    index === currentSlide 
-                      ? 'bg-yellow-600 w-8' 
-                      : 'bg-gray-300 w-4'
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
-          {/* Right Content - Awards Grid */}
-          <div className="grid grid-cols-2 gap-6 ">
-            {/* Award 1 - LeanLaion Unique Design */}
-            <div className="text-center space-y-4 ">
-              <div className="bg-gray-400 h-32 rounded-lg flex items-center justify-center hover:bg-gradient-to-bl from-blue-300 to-blue-500 hover:scale-110 transition-transform">
-                <div className="text-white text-center">
-                  <div className="text-xs opacity-75 mb-1">★★</div>
-                  <div className="font-medium text-sm">LeanLaion</div>
-                </div>
-              </div>
-              <p className="text-gray-600 font-medium">Unique Design</p>
-            </div>
+          {/* Right Content - Auto sliding client boxes */}
+          <div className="w-full px-4 sm:px-0">
+            {/* Inline style keyframes for continuous sliding */}
+            <style>{`
+              .pause-animation:hover { animation-play-state: paused; }
+              @keyframes slideClients {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+              }
+            `}</style>
 
-            {/* Award 2 - Excellence 2015 */}
-            <div className="text-center space-y-4">
-              <div className="bg-gray-400 h-32 rounded-lg flex items-center justify-center  hover:bg-gradient-to-bl from-blue-300 to-blue-500 hover:scale-110 transition-transform">
-                <div className="text-white text-center">
-                  <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-1">
-                    <span className="text-xs font-bold">2015</span>
+            <div className="overflow-hidden w-full pl-0">
+              <div
+                className="flex items-stretch space-x-3 hover:pause-animation justify-start will-change-transform"
+                style={{
+                  animation: 'slideClients 10s linear infinite'
+                }}
+              >
+                {
+                  // duplicate the items to create a seamless loop
+                }
+                {[
+                  { title: 'LeanLaion', label: 'Unique Design', badge: '★★' },
+                  { title: '2015', label: 'Excellence 2015', badge: null },
+                  { title: 'LeanLaion', label: 'Special Design', badge: '★★' },
+                  { title: 'LeanLaion', label: 'Creative Graphic', badge: '★★' }
+                ].concat([
+                  { title: 'LeanLaion', label: 'Unique Design', badge: '★★' },
+                  { title: '2015', label: 'Excellence 2015', badge: null },
+                  { title: 'LeanLaion', label: 'Special Design', badge: '★★' },
+                  { title: 'LeanLaion', label: 'Creative Graphic', badge: '★★' },
+                  { title: 'LeanLaion', label: 'Unique Design', badge: '★★' },
+                  { title: '2015', label: 'Excellence 2015', badge: null },
+                  { title: 'LeanLaion', label: 'Special Design', badge: '★★' },
+                  { title: 'LeanLaion', label: 'Creative Graphic', badge: '★★' }
+                ]).map((a, idx) => (
+                  <div key={idx} className="w-36 sm:w-44 md:w-48 flex-shrink-0 text-center space-y-3">
+                    <div className="bg-gray-400 h-28 sm:h-32 rounded-lg flex items-center justify-center hover:bg-gradient-to-bl from-blue-300 to-blue-500 hover:scale-110 transition-transform">
+                      <div className="text-white text-center">
+                        {a.badge && <div className="text-xs opacity-75 mb-1">{a.badge}</div>}
+                        {a.title === '2015' ? (
+                          <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center mx-auto mb-1">
+                            <span className="text-xs font-bold">2015</span>
+                          </div>
+                        ) : (
+                          <div className="font-medium text-sm">{a.title}</div>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-gray-600 font-medium">{a.label}</p>
                   </div>
-                </div>
+                ))}
               </div>
-              <p className="text-gray-600 font-medium">Excellence 2015</p>
-            </div>
-
-            {/* Award 3 - LeanLaion Special Design */}
-            <div className="text-center space-y-4">
-              <div className="bg-gray-400 h-32 rounded-lg flex items-center justify-center  hover:bg-gradient-to-bl from-blue-300 to-blue-500 hover:scale-110 transition-transform">
-                <div className="text-white text-center">
-                  <div className="text-xs opacity-75 mb-1">★★</div>
-                  <div className="font-medium text-sm">LeanLaion</div>
-                </div>
-              </div>
-              <p className="text-gray-600 font-medium">Special Design</p>
-            </div>
-
-            {/* Award 4 - LeanLaion Creative Graphic */}
-            <div className="text-center space-y-4">
-              <div className="bg-gray-400 h-32 rounded-lg flex items-center justify-center  hover:bg-gradient-to-bl from-blue-300 to-blue-500 hover:scale-110 transition-transform">
-                <div className="text-white text-center">
-                  <div className="text-xs opacity-75 mb-1">★★</div>
-                  <div className="font-medium text-sm">LeanLaion</div>
-                </div>
-              </div>
-              <p className="text-gray-600 font-medium">Creative Graphic</p>
             </div>
           </div>
         </div>

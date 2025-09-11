@@ -8,8 +8,6 @@ export default function WhyChoose() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* Left Side - Image Section */}
-          
-
            <div className="space-y-6">
             {/* Fun fact label */}
             <div className="text-amber-600 font-medium text-sm uppercase tracking-wide">
